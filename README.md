@@ -1,6 +1,8 @@
 # Equation Solver with Particle Swarm Optimization
 
 ## 1. Import module
+
+
 ```python
 import random
 import re
@@ -8,17 +10,23 @@ import operator as operan
 ```
 
 ## 2. Define The Equation
+
+
 ```python
 equation = 'a+2b-3c+4d=30'
 ```
 
 ## 3. Define Operans
+
+
 ```python
 ops = { "+": operan.add, 
         "-": operan.sub }
 ```
 
 ## 4. Parse Equation (string) to Real Equation
+
+
 ```python
 def break_equation(equation):
   equation_resul = int(equation.split('=')[1])
@@ -43,6 +51,8 @@ def break_equation(equation):
 ```
 
 ## 5. Print Real Equation
+
+
 ```python
 cons, operator, equation_resul, number_of_variable = break_equation(equation)
 print(cons)
@@ -58,6 +68,8 @@ print(number_of_variable)
 
 
 ## 6. Compute Fitness
+
+
 ```python
 def cal_fitness(var_values):
     result = ops[operator[0]]((cons[0]*var_values[0]),(cons[1]*var_values[1]))
@@ -70,6 +82,8 @@ def cal_fitness(var_values):
 ```
 
 ## 7. Particle Class
+
+
 ```python
 class Particle:
     def __init__(self, initial_position):
@@ -109,6 +123,8 @@ class Particle:
 ```
 
 ## 8. PSO Class
+
+
 ```python
 class PSO:
     def __init__(self, initial_position, num_particles, limit, num_iterations, w, c1, c2):
@@ -148,6 +164,8 @@ class PSO:
 ```
 
 ## 9. Example
+
+
 ```python
 initial_position = [5  for i in range(number_of_variable)]           
 limit =[(0,10),(0,10),(0,10),(0,10)] 
@@ -156,5 +174,6 @@ pso.run()
 ```
 
     Result:
-    best position of the group: 	[7.560453440543434, 4.099113449433389, 4.104981759840012, 6.636652246547547]
-    best error of the group: 	0.009655953919637028
+    best position of the group: 	[4.532972421221837, 5.127465638518598, 2.421653729133265, 5.617195315829612]
+    best error of the group: 	0.008276225822314132
+
